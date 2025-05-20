@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router";
-import userIcon from "/user-account.png";
-import logoIcon from "../../assets/logo/green-home.png";
+import userIcon from "/assets/user-account.png";
+import logoIcon from "/assets/green-home.png";
 // import AuthContext from "../../contexts/AuthContext";
 
 function Navbar() {
@@ -50,7 +50,7 @@ function Navbar() {
         <img className="w-12" src={logoIcon} alt="" />
         <NavLink
           to="/"
-          className="font-bold   text-lime-700 text-xl md:text-2xl"
+          className="font-bold   text-green-600 text-xl md:text-2xl"
         >
           EcoBari
         </NavLink>
