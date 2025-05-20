@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-darkGreen: #003d06;
+  --color-darkGreen2: #529a49;
+  --colot-textOrange: #f38c2b;
+  --color-lightGreen: #028e14;
+  --color-lightGreen2: #a9dc75;
+  --color-exLightGreen: #c4ebcc;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.logo {
+  font-family: "Pacifico", cursive;
+}
+.nav .active {
+  border-bottom: 2px solid orangered;
+}
