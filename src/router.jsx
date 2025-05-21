@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ResetPassword from "./pages/ResetPassword";
+import ShareGardenTip from "./pages/ShareGardenTip";
+import BrowseTips from "./pages/BrowseTips";
+import TipsDetails from "./pages/TipsDetails";
 
 const router = createBrowserRouter([
   {
@@ -24,10 +27,21 @@ const router = createBrowserRouter([
         Component: Login,
       },
       {
-        path: "/reset-password",
+        path: "reset-password",
         Component: ResetPassword,
       },
-
+      {
+        path: "share-garden-tip",
+        Component: ShareGardenTip,
+      },
+      {
+        path: "browse-tips",
+        Component: BrowseTips,
+      },
+      {
+        path: "browse-tips/:id",
+        Component: TipsDetails,
+      },
       {
         path: "/*",
         Component: NotFound,

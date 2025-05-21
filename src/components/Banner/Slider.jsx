@@ -14,7 +14,7 @@ function Slider({ content }) {
         <div className=" ">
           <h1 className="mb-5 text-5xl font-bold">{title}</h1>
           <p className="mb-5">{desc}</p>
-          <button className="btn bg-green-600 border-none shadow-none">
+          <button className="btn bg-green-600 text-slate-200 border-none shadow-none">
             {btnText}
           </button>
         </div>
