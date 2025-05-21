@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { NavLink, Link } from "react-router";
 import userIcon from "/assets/user-account.png";
 import logoIcon from "/assets/green-home.png";
-// import AuthContext from "../../contexts/AuthContext";
-
+import AuthContext from "../../contexts/AuthContext";
+import { RiMenuFill } from "react-icons/ri";
+import { RxCross2 } from "react-icons/rx";
 function Navbar() {
-  // const { user, logoutUser } = use(AuthContext);
-  const user = {
-    displayName: "Ahad Uddin",
-  };
+  const { user, logoutUser } = use(AuthContext);
+  const [isActive, setIsActive] = useState(false);
   const [isName, setName] = useState(false);
   // console.log(user);
   const links = (
@@ -31,9 +30,9 @@ function Navbar() {
     </>
   );
 
-  // const handleLogOut = () => {
-  //   logoutUser();
-  // };
+  const handleLogOut = () => {
+    logoutUser();
+  };
   const showName = () => {
     if (user) {
       setName(true);
@@ -56,7 +55,7 @@ function Navbar() {
         </NavLink>
       </div>
 
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden min-[1100px]:flex">
         <ul className=" nav flex gap-x-10">{links}</ul>
       </div>
 
@@ -86,7 +85,7 @@ function Navbar() {
         {user ? (
           <div className="relative dropdown">
             <img
-              src={userIcon}
+              src={user ? user.photoURL : userIcon}
               className="w-10 h-10 mr-2 object-cover rounded-full"
               alt=""
               onMouseEnter={showName}
@@ -108,24 +107,53 @@ function Navbar() {
                 {links}
               </div>
               <li className="font-medium text-lightGray">
-                {user && (
-                  <button
-                    //  onClick={handleLogOut}
-                    className="w-full"
-                  >
-                    Log out
-                  </button>
-                )}
+                <button onClick={handleLogOut} className="w-full">
+                  Logout
+                </button>
               </li>
             </ul>
           </div>
         ) : (
-          <Link
-            to="/login"
-            className="btn hidden md:flex bg-yellow-400 px-10 text-lg"
-          >
-            Login
-          </Link>
+          <>
+            <div className="dropdown min-[1100px]:hidden">
+              <button
+                className="pt-2 mr-2"
+                onClick={() => setIsActive(!isActive)}
+              >
+                {isActive ? <RxCross2 size={24} /> : <RiMenuFill size={24} />}
+              </button>
+
+              {/* <img
+                src={user ? user.photoURL : userIcon}
+                className="w-10 h-10 mr-2 object-cover rounded-full"
+                tabIndex={0}
+                role="button"
+              /> */}
+              {isActive && (
+                <ul
+                  tabIndex={0}
+                  className="absolute -left-30  nav menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-42 p-2 shadow"
+                >
+                  <div className="min-[1100px]:hidden border-b-2 border-orange-400">
+                    {links}
+                  </div>
+                  <li className="font-medium md:hidden text-lightGray">
+                    <Link to="/login">
+                      <button onClick={handleLogOut} className="w-full">
+                        Login
+                      </button>
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </div>
+            <Link
+              to="/login"
+              className="btn hidden  md:flex bg-green-500 text-white px-10 text-lg"
+            >
+              Login
+            </Link>
+          </>
         )}
       </div>
     </nav>
