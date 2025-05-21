@@ -103,7 +103,7 @@ function Navbar() {
               tabIndex={0}
               className="absolute -left-30  nav menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-42 p-2 shadow"
             >
-              <div className="lg:hidden border-b-2 border-orange-400">
+              <div className="min-[1100px]:hidden border-b-2 border-orange-400">
                 {links}
               </div>
               <li className="font-medium text-lightGray">
@@ -123,12 +123,6 @@ function Navbar() {
                 {isActive ? <RxCross2 size={24} /> : <RiMenuFill size={24} />}
               </button>
 
-              {/* <img
-                src={user ? user.photoURL : userIcon}
-                className="w-10 h-10 mr-2 object-cover rounded-full"
-                tabIndex={0}
-                role="button"
-              /> */}
               {isActive && (
                 <ul
                   tabIndex={0}

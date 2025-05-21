@@ -5,7 +5,7 @@ const NotFound = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="px-4">
+    <div className="px-4 my-10">
       <div className="min-h-screen flex flex-col items-center justify-center  max-w-[500px] mx-auto rounded-xl text-gray-700 ">
         <img
           src="/assets/green-error.svg"
