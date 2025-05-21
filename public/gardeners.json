@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Amina Khatun",
+    "age": 35,
+    "gender": "Female",
+    "status": "Active",
+    "experience": "5 years of rooftop gardening",
+    "image": "https://i.ibb.co/album/amina.jpg",
+    "totalTips": 12,
+    "location": "Dhaka, Bangladesh"
+  },
+  {
+    "name": "Rafiq Ahmed",
+    "age": 42,
+    "gender": "Male",
+    "status": "Active",
+    "experience": "Specialist in organic composting",
+    "image": "https://i.ibb.co/album/rafiq.jpg",
+    "totalTips": 18,
+    "location": "Sylhet, Bangladesh"
+  },
+  {
+    "name": "Shila Roy",
+    "age": 29,
+    "gender": "Female",
+    "status": "Inactive",
+    "experience": "Indoor plant decorator and hydroponics enthusiast",
+    "image": "https://i.ibb.co/album/shila.jpg",
+    "totalTips": 7,
+    "location": "Rajshahi, Bangladesh"
+  },
+  {
+    "name": "Tanvir Hossain",
+    "age": 31,
+    "gender": "Male",
+    "status": "Active",
+    "experience": "Community composting volunteer",
+    "image": "https://i.ibb.co/album/tanvir.jpg",
+    "totalTips": 15,
+    "location": "Chittagong, Bangladesh"
+  },
+  {
+    "name": "Nusrat Jahan",
+    "age": 26,
+    "gender": "Female",
+    "status": "Active",
+    "experience": "Balcony vegetable grower",
+    "image": "https://i.ibb.co/album/nusrat.jpg",
+    "totalTips": 9,
+    "location": "Khulna, Bangladesh"
+  },
+  {
+    "name": "Kamrul Islam",
+    "age": 38,
+    "gender": "Male",
+    "status": "Active",
+    "experience": "10+ years of terrace gardening",
+    "image": "https://i.ibb.co/album/kamrul.jpg",
+    "totalTips": 20,
+    "location": "Barisal, Bangladesh"
+  },
+  {
+    "name": "Rumana Akter",
+    "age": 33,
+    "gender": "Female",
+    "status": "Active",
+    "experience": "Expert in cactus and succulents",
+    "image": "https://i.ibb.co/album/rumana.jpg",
+    "totalTips": 11,
+    "location": "Mymensingh, Bangladesh"
+  },
+  {
+    "name": "Ashraful Alam",
+    "age": 40,
+    "gender": "Male",
+    "status": "Inactive",
+    "experience": "Uses aquaponics for growing herbs",
+    "image": "https://i.ibb.co/album/ashraful.jpg",
+    "totalTips": 6,
+    "location": "Comilla, Bangladesh"
+  },
+  {
+    "name": "Mitu Rahman",
+    "age": 28,
+    "gender": "Female",
+    "status": "Active",
+    "experience": "Teaches children gardening in school",
+    "image": "https://i.ibb.co/album/mitu.jpg",
+    "totalTips": 14,
+    "location": "Rangpur, Bangladesh"
+  },
+  {
+    "name": "Habib Ullah",
+    "age": 45,
+    "gender": "Male",
+    "status": "Active",
+    "experience": "Farmer turned urban gardener",
+    "image": "https://i.ibb.co/album/habib.jpg",
+    "totalTips": 22,
+    "location": "Gazipur, Bangladesh"
+  }
+]

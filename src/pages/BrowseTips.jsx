@@ -2,33 +2,38 @@ import React from "react";
 
 import treeImg from "../assets/trees/tree.jpg";
 import { Link } from "react-router";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaFilter } from "react-icons/fa";
 function BrowseTips() {
   const tips = [
     {
       img: treeImg,
       title: "Cy Ganderton",
       category: "Composting",
+      difficulty: "Easy",
     },
     {
       img: treeImg,
       title: "Cy Ganderton",
       category: "Composting",
+      difficulty: "Medium",
     },
     {
       img: treeImg,
       title: "Cy Ganderton",
       category: "Composting",
+      difficulty: "Easy",
     },
     {
       img: treeImg,
       title: "Cy Ganderton",
       category: "Composting",
+      difficulty: "Hard",
     },
     {
       img: treeImg,
       title: "Cy Ganderton",
       category: "Composting",
+      difficulty: "Medium",
     },
   ];
   return (
@@ -46,7 +51,25 @@ function BrowseTips() {
         </p>
       </div>
       {/* table data */}
+
       <div className="my-20 bg-base-100 py-10 px-2 overflow-x-auto max-w-[1080px] mx-auto rounded-box border border-base-content/5 ">
+        <div className="mb-8">
+          <fieldset className="flex items-center gap-2">
+            <label>
+              <FaFilter size={22} />
+              {/* <span className="text-base">Filter</span> */}
+            </label>
+            <select
+              defaultValue="Pick a browser"
+              className="select max-w-[150px]"
+            >
+              <option value="all">All</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </fieldset>
+        </div>
         <table className="table">
           {/* head */}
           <thead>
@@ -54,6 +77,7 @@ function BrowseTips() {
               <th>Image</th>
               <th>Title</th>
               <th>Category</th>
+              <th>Difficulty</th>
               <th>Details</th>
             </tr>
           </thead>
@@ -70,6 +94,7 @@ function BrowseTips() {
                 </td>
                 <td>{tip.title}</td>
                 <td>{tip.category}</td>
+                <td>{tip.difficulty}</td>
                 <td>
                   <Link to={`/browse-tips/${i}`}>
                     <button className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200">

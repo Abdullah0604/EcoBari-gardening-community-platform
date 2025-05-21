@@ -8,6 +8,9 @@ import ResetPassword from "./pages/ResetPassword";
 import ShareGardenTip from "./pages/ShareGardenTip";
 import BrowseTips from "./pages/BrowseTips";
 import TipsDetails from "./pages/TipsDetails";
+import MyTips from "./pages/MyTips";
+import GardenerCard from "./pages/Gardeners";
+import Gardeners from "./pages/Gardeners";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +44,15 @@ const router = createBrowserRouter([
       {
         path: "browse-tips/:id",
         Component: TipsDetails,
+      },
+      {
+        path: "my-tips",
+        Component: MyTips,
+      },
+      {
+        path: "explore-gardeners",
+        loader: () => fetch("./gardeners.json"),
+        Component: Gardeners,
       },
       {
         path: "/*",
