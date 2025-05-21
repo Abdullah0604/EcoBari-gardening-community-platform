@@ -45,12 +45,12 @@ function Navbar() {
     }
   };
   return (
-    <nav className="navbar py-8 ">
+    <nav className="navbar py-5 fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-slate-100/50 shadow-md border-b border-white/10">
       <div className="navbar-start gap-2">
         <img className="w-12" src={logoIcon} alt="" />
         <NavLink
           to="/"
-          className="font-bold text-primary   text-xl md:text-2xl"
+          className="font-bold text-green-600  text-xl md:text-2xl"
         >
           EcoBari
         </NavLink>
@@ -61,7 +61,7 @@ function Navbar() {
       </div>
 
       <div className="navbar-end ">
-        <label className="swap swap-rotate">
+        <label className="swap swap-rotat pt-1 mr-2">
           {/* this hidden checkbox controls the state */}
           <input type="checkbox" className="theme-controller" value="dark" />
 
