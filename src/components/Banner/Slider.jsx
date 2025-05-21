@@ -4,7 +4,7 @@ function Slider({ content }) {
   const { title, desc, btnText, img } = content;
   return (
     <div
-      className="hero min-h-screen rounded-lg  "
+      className="hero min-h-[85vh] rounded-lg  "
       style={{
         backgroundImage: `url(${img})`,
       }}

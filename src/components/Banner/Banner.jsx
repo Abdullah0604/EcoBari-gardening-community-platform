@@ -30,13 +30,13 @@ function Banner() {
     },
   ];
   return (
-    <div className="mt-20 px-2 md:px-0">
+    <div className="mt-24 px-2 md:px-0">
       <Swiper
         pagination={{
           dynamicBullets: true,
         }}
         autoplay={{
-          delay: 2000, // 3 seconds
+          delay: 4000, // 3 seconds
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination]}

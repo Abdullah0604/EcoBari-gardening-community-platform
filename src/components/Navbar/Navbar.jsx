@@ -45,7 +45,7 @@ function Navbar() {
     }
   };
   return (
-    <nav className="navbar py-5 fixed top-0  max-w-[1400px] w-full mx-auto z-50 backdrop-blur-md bg-slate-100/20  ">
+    <nav className="navbar py-5 fixed top-0  max-w-[1400px] w-full mx-auto z-50 backdrop-blur-md   ">
       <div className="navbar-start gap-2">
         <img className="w-12" src={logoIcon} alt="" />
         <NavLink
