@@ -33,17 +33,17 @@ function Footer() {
           </div>
           <div className="flex gap-x-4">
             <img
-              className="w-10 h-10 cursor-pointer hover:scale-105 transition-transform duration-500"
+              className="w-8 h-10 cursor-pointer hover:scale-105 transition-transform duration-500"
               src={facebook}
               alt=""
             />
             <img
-              className="w-9 h-10 cursor-pointer hover:scale-105 transition-transform duration-500"
+              className="w-7 h-10 cursor-pointer hover:scale-105 transition-transform duration-500"
               src={twitter}
               alt=""
             />
             <img
-              className="w-9 h-10 cursor-pointer hover:scale-105 transition-transform duration-500"
+              className="w-7 h-10 cursor-pointer hover:scale-105 transition-transform duration-500"
               src={instagram}
               alt=""
             />

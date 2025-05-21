@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "./layouts/MainLayout";
 import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
       {
         path: "/*",
         Component: NotFound,
+      },
+      {
+        path: "/",
+        Component: Home,
       },
     ],
   },
