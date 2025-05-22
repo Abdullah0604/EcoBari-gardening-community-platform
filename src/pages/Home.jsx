@@ -1,3 +1,4 @@
+import About from "../components/About/About";
 import Banner from "../components/Banner/Banner";
 import GardenersSection from "../components/GardenersSection/GardenersSection";
 import OurPromises from "../components/OurPromises/OurPromises";
@@ -9,6 +10,7 @@ function Home() {
     <div>
       <Banner />
       <OurPromises />
+      <About />
       <GardenersSection />
       <TopTrendingTips />
       <Success />
