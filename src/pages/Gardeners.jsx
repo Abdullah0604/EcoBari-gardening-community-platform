@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router";
 import GardenerCard from "../components/GardenerCard/GardenerCard";
+// import Loading from "../components/Loading/Loading";
 const Gardeners = () => {
-  const gardeners = useLoaderData();
-
+  const gardenersDB = useLoaderData();
   return (
     <div className="my-28 ">
       <div className="text-center py-14">
@@ -17,7 +17,7 @@ const Gardeners = () => {
         </p>
       </div>
       <div className="my-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10">
-        {gardeners.map((gardener, i) => (
+        {gardenersDB.map((gardener, i) => (
           <GardenerCard key={i} gardener={gardener} />
         ))}
       </div>

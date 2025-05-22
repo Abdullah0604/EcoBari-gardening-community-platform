@@ -5,7 +5,7 @@
     "gender": "Female",
     "status": "Active",
     "experience": "5 years of rooftop gardening",
-    "image": "https://i.ibb.co/album/amina.jpg",
+    "image": "https://i.ibb.co/Y459f1y2/lawyer-09.jpg",
     "totalTips": 12,
     "location": "Dhaka, Bangladesh"
   },
@@ -15,7 +15,7 @@
     "gender": "Male",
     "status": "Active",
     "experience": "Specialist in organic composting",
-    "image": "https://i.ibb.co/album/rafiq.jpg",
+    "image": "https://i.ibb.co/ccjwzFx2/boy-05.jpg",
     "totalTips": 18,
     "location": "Sylhet, Bangladesh"
   },
@@ -25,7 +25,7 @@
     "gender": "Female",
     "status": "Inactive",
     "experience": "Indoor plant decorator and hydroponics enthusiast",
-    "image": "https://i.ibb.co/album/shila.jpg",
+    "image": "https://i.ibb.co/397Dz8Dx/lawyer-08.jpg",
     "totalTips": 7,
     "location": "Rajshahi, Bangladesh"
   },
@@ -35,7 +35,7 @@
     "gender": "Male",
     "status": "Active",
     "experience": "Community composting volunteer",
-    "image": "https://i.ibb.co/album/tanvir.jpg",
+    "image": "https://i.ibb.co/RTVzG6Tf/boy-04.jpg",
     "totalTips": 15,
     "location": "Chittagong, Bangladesh"
   },
@@ -45,7 +45,7 @@
     "gender": "Female",
     "status": "Active",
     "experience": "Balcony vegetable grower",
-    "image": "https://i.ibb.co/album/nusrat.jpg",
+    "image": "https://i.ibb.co/9kFDN26Y/girl-03.jpg",
     "totalTips": 9,
     "location": "Khulna, Bangladesh"
   },
@@ -53,9 +53,9 @@
     "name": "Kamrul Islam",
     "age": 38,
     "gender": "Male",
-    "status": "Active",
+    "status": "Inactive",
     "experience": "10+ years of terrace gardening",
-    "image": "https://i.ibb.co/album/kamrul.jpg",
+    "image": "https://i.ibb.co/hRCrhzLL/boy-03.jpg",
     "totalTips": 20,
     "location": "Barisal, Bangladesh"
   },
@@ -65,7 +65,7 @@
     "gender": "Female",
     "status": "Active",
     "experience": "Expert in cactus and succulents",
-    "image": "https://i.ibb.co/album/rumana.jpg",
+    "image": "https://i.ibb.co/pvPVK4Yh/girl-02.jpg",
     "totalTips": 11,
     "location": "Mymensingh, Bangladesh"
   },
@@ -75,7 +75,7 @@
     "gender": "Male",
     "status": "Inactive",
     "experience": "Uses aquaponics for growing herbs",
-    "image": "https://i.ibb.co/album/ashraful.jpg",
+    "image": "https://i.ibb.co/5Xhz2HcC/boy-02.jpg",
     "totalTips": 6,
     "location": "Comilla, Bangladesh"
   },
@@ -85,7 +85,7 @@
     "gender": "Female",
     "status": "Active",
     "experience": "Teaches children gardening in school",
-    "image": "https://i.ibb.co/album/mitu.jpg",
+    "image": "https://i.ibb.co/d07Zgywz/girl-01.jpg",
     "totalTips": 14,
     "location": "Rangpur, Bangladesh"
   },
@@ -93,9 +93,9 @@
     "name": "Habib Ullah",
     "age": 45,
     "gender": "Male",
-    "status": "Active",
+    "status": "Inactive",
     "experience": "Farmer turned urban gardener",
-    "image": "https://i.ibb.co/album/habib.jpg",
+    "image": "https://i.ibb.co/4w9rgNYS/boy-01.jpg",
     "totalTips": 22,
     "location": "Gazipur, Bangladesh"
   }

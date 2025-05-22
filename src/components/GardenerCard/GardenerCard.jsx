@@ -9,7 +9,7 @@ const GardenerCard = ({ gardener }) => {
     <div className="max-w-sm w-full   mx-auto bg-slate-100 shadow-lg rounded-xl ">
       <div className="flex flex-col py-14   items-center px-3 -mt-12 ">
         <img
-          className="w-24 mb-4 mt-3  object-cover border-4 border-white rounded-full "
+          className="w-24 h-24 mb-4 mt-3  object-cover border-4 border-white rounded-full "
           src={image}
           alt={name}
         />

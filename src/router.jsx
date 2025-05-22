@@ -9,8 +9,11 @@ import ShareGardenTip from "./pages/ShareGardenTip";
 import BrowseTips from "./pages/BrowseTips";
 import TipsDetails from "./pages/TipsDetails";
 import MyTips from "./pages/MyTips";
-import GardenerCard from "./pages/Gardeners";
+// import GardenerCard from "./pages/Gardeners";
 import Gardeners from "./pages/Gardeners";
+import PrivateRouter from "./provider/PrivateRouter";
+import { Suspense } from "react";
+import Loading from "./components/Loading/Loading";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +24,44 @@ const router = createBrowserRouter([
         path: "/",
         Component: Home,
       },
+      {
+        path: "explore-gardeners",
+        loader: () => fetch("http://localhost:3000/explore-gardeners"),
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Gardeners />
+          </Suspense>
+        ),
+      },
+      {
+        path: "browse-tips",
+        Component: BrowseTips,
+      },
+      {
+        path: "browse-tips/:id",
+        element: (
+          <PrivateRouter>
+            <TipsDetails />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "share-garden-tip",
+        element: (
+          <PrivateRouter>
+            <ShareGardenTip />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "my-tips",
+        element: (
+          <PrivateRouter>
+            <MyTips />
+          </PrivateRouter>
+        ),
+      },
+
       {
         path: "register",
         Component: Register,
@@ -33,27 +74,7 @@ const router = createBrowserRouter([
         path: "reset-password",
         Component: ResetPassword,
       },
-      {
-        path: "share-garden-tip",
-        Component: ShareGardenTip,
-      },
-      {
-        path: "browse-tips",
-        Component: BrowseTips,
-      },
-      {
-        path: "browse-tips/:id",
-        Component: TipsDetails,
-      },
-      {
-        path: "my-tips",
-        Component: MyTips,
-      },
-      {
-        path: "explore-gardeners",
-        loader: () => fetch("./gardeners.json"),
-        Component: Gardeners,
-      },
+
       {
         path: "/*",
         Component: NotFound,

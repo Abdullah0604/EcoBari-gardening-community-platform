@@ -3,7 +3,7 @@ import ShareTipsInput from "../components/ShareTipsInput/ShareTipsInput";
 
 function ShareGardenTip() {
   const handleAddTips = () => {
-    console.log("your tips");
+    // console.log("your tips");
   };
   return (
     <div className="py-14 my-20 max-w-[1200px] mx-auto">

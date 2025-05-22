@@ -21,12 +21,17 @@ function Navbar() {
       <li className="font-medium text-lightGray">
         <NavLink to="/browse-tips">Browse Tips </NavLink>
       </li>
-      <li className="font-medium text-lightGray">
-        <NavLink to="/share-garden-tip">Share a Garden Tip </NavLink>
-      </li>
-      <li className="font-medium text-lightGray">
-        <NavLink to="/my-tips">My Tips </NavLink>
-      </li>
+      {user && (
+        <>
+          {" "}
+          <li className="font-medium text-lightGray">
+            <NavLink to="/share-garden-tip">Share a Garden Tip </NavLink>
+          </li>
+          <li className="font-medium text-lightGray">
+            <NavLink to="/my-tips">My Tips </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
