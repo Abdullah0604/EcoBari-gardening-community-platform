@@ -2,53 +2,12 @@ import React, { use, useEffect, useState } from "react";
 import { Link } from "react-router";
 import { FaEdit, FaEye, FaTrash } from "react-icons/fa";
 import AuthContext from "../contexts/AuthContext";
+import Swal from "sweetalert2";
 
 function MyTips() {
   const [loading, setLoading] = useState(true);
   const { user } = use(AuthContext);
   const [myTips, setMyTips] = useState([]);
-  // const tips = [
-  //   {
-  //     img: treeImg,
-  //     title: "How I Compost Kitchen Waste",
-  //     category: "Composting",
-  //     plantType: "General Garden",
-  //     description:
-  //       "Simple kitchen scraps like peels and coffee grounds turn into great compost in just weeks.",
-  //   },
-  //   {
-  //     img: treeImg,
-  //     title: "Balcony Composting Made Easy",
-  //     category: "Composting",
-  //     plantType: "Balcony Plants",
-  //     description:
-  //       "I use a small bucket with layers of dry leaves and wet waste to make compost on my balcony.",
-  //   },
-  //   {
-  //     img: treeImg,
-  //     title: "Natural Compost for Tomatoes",
-  //     category: "Composting",
-  //     plantType: "Tomato",
-  //     description:
-  //       "Crushed eggshells and banana peels make my tomato plants grow stronger and healthier.",
-  //   },
-  //   {
-  //     img: treeImg,
-  //     title: "Compost with Cow Dung & Leaves",
-  //     category: "Composting",
-  //     plantType: "Vegetable Garden",
-  //     description:
-  //       "Using cow dung and dry leaves gives me rich compost in 3-4 weeks during summer.",
-  //   },
-  //   {
-  //     img: treeImg,
-  //     title: "Quick Compost in Plastic Pots",
-  //     category: "Composting",
-  //     plantType: "Indoor Plants",
-  //     description:
-  //       "I compost in small plastic pots by rotating waste and keeping them slightly moist.",
-  //   },
-  // ];
   useEffect(() => {
     setLoading(true);
     fetch(`https://ecobari-server.vercel.app/my-tips/${user.email}`)
@@ -60,6 +19,40 @@ function MyTips() {
       });
   }, [user.email]);
 
+  const handleDeleteTip = (id) => {
+    console.log(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://ecobari-server.vercel.app/delete-tip`, {
+          method: "DELETE",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ id }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your tip has been deleted.",
+                icon: "success",
+              });
+              const remainingTips = myTips.filter((tip) => tip._id !== id);
+              setMyTips(remainingTips);
+            }
+          });
+      }
+    });
+  };
   return (
     <div className="px-2 my-34">
       {/* header */}
@@ -111,16 +104,19 @@ function MyTips() {
                   <td>{tip.category}</td>
                   <td>{tip.availability}</td>
                   <td className="flex">
-                    <Link to={`/browse-tips/${i}`}>
-                      <button className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200">
-                        <FaEdit size={18} />
-                      </button>
-                    </Link>
-                    <Link to={`/browse-tips/${i}`}>
-                      <button className="mx-2 px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200">
-                        <FaTrash size={18} />
-                      </button>
-                    </Link>
+                    <button
+                      onClick={() => handleDeleteTip(tip._id)}
+                      className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
+                    >
+                      <FaEdit size={18} />
+                    </button>
+
+                    <button
+                      onClick={() => handleDeleteTip(tip._id)}
+                      className="mx-2 px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
+                    >
+                      <FaTrash size={18} />
+                    </button>
                   </td>
                 </tr>
               ))}
