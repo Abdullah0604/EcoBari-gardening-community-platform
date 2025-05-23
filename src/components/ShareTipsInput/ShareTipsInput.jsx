@@ -1,5 +1,3 @@
-import React from "react";
-
 function ShareTipsInput({ label, inputType, readValue, selectValue }) {
   return (
     <>
@@ -10,7 +8,7 @@ function ShareTipsInput({ label, inputType, readValue, selectValue }) {
           </label>
           <select
             name={label.split(" ").join("")}
-            defaultValue={selectValue[0]}
+            defaultValue={readValue ? readValue : selectValue[0]}
             className="select  w-full"
             required
           >
