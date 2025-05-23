@@ -13,6 +13,7 @@ function ShareGardenTip() {
     const form = e.target;
     const title = form.title.value;
     const plantType = form.plantType.value;
+    const description = form.description.value;
     const difficulty = form.difficultyLevel.value;
     const availability = form.availability.value;
     const category = form.category.value;
@@ -22,6 +23,7 @@ function ShareGardenTip() {
     const tip = {
       title,
       plantType,
+      description,
       difficulty,
       availability,
       category,

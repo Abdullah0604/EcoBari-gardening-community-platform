@@ -12,7 +12,7 @@ import MyTips from "./pages/MyTips";
 // import GardenerCard from "./pages/Gardeners";
 import Gardeners from "./pages/Gardeners";
 import PrivateRouter from "./provider/PrivateRouter";
-import { Suspense } from "react";
+
 import Loading from "./components/Loading/Loading";
 
 const router = createBrowserRouter([
@@ -40,6 +40,9 @@ const router = createBrowserRouter([
       },
       {
         path: "browse-tips/:id",
+        hydrateFallbackElement: <Loading />,
+        loader: ({ params }) =>
+          fetch(`https://ecobari-server.vercel.app/tip-details/${params.id}`),
         element: (
           <PrivateRouter>
             <TipsDetails />
