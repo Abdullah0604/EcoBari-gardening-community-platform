@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { Bounce, toast } from "react-toastify";
 function successMessage(message) {
   Swal.fire({
-    title: "Welcome to EcoBar!",
+    title: "Welcome to EcoBari!",
     text: message,
     icon: "success",
     confirmButtonText: "Continue",
@@ -15,6 +15,19 @@ function errorMessage(title, desc) {
     title: title,
     text: desc,
     confirmButtonText: "Go to Login",
+  });
+}
+function successToast(message) {
+  toast.success(message, {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
   });
 }
 function passwordErrorMessage(isPassword) {
@@ -31,4 +44,4 @@ function passwordErrorMessage(isPassword) {
   });
 }
 
-export { successMessage, errorMessage, passwordErrorMessage };
+export { successMessage, errorMessage, passwordErrorMessage, successToast };

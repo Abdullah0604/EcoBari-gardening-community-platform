@@ -47,18 +47,16 @@ function BrowseTips() {
     console.log(difValue);
   };
   useEffect(() => {
-    // setLoading(false);
+    setLoading(true);
     fetch(`https://ecobari-server.vercel.app/browse-tips/${difficulty}`)
       .then((res) => res.json())
       .then((data) => {
-        // setLoading(false);
+        setLoading(false);
         setTips(data);
         console.log(data);
       });
   }, [difficulty]);
-  // if (loading) {
-  //   return <Loading />;
-  // }
+
   return (
     <div className="px-2 my-34">
       {/* header */}
@@ -94,42 +92,49 @@ function BrowseTips() {
             </select>
           </fieldset>
         </div>
-        <table className="table">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Difficulty</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* row 1 */}
-            {tips.map((tip) => (
-              <tr key={tip._id}>
-                <td>
-                  <img
-                    className="w-12 h-12 object-cover rounded-md"
-                    src={tip.image}
-                    alt=""
-                  />
-                </td>
-                <td>{tip.title}</td>
-                <td>{tip.category}</td>
-                <td>{tip.difficulty}</td>
-                <td>
-                  <Link to={`/browse-tips/${tip._id}`}>
-                    <button className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200">
-                      <FaEye size={18} />
-                    </button>
-                  </Link>
-                </td>
+
+        {loading ? (
+          <div className="w-5xl min-h-[300px] flex justify-center items-center">
+            <h2 className="font-semibold text-xl">Loading...</h2>
+          </div>
+        ) : (
+          <table className="table">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Difficulty</th>
+                <th>Details</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {tips.map((tip) => (
+                <tr key={tip._id}>
+                  <td>
+                    <img
+                      className="w-12 h-12 object-cover rounded-md"
+                      src={tip.image}
+                      alt=""
+                    />
+                  </td>
+                  <td>{tip.title}</td>
+                  <td>{tip.category}</td>
+                  <td>{tip.difficulty}</td>
+                  <td>
+                    <Link to={`/browse-tips/${tip._id}`}>
+                      <button className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200">
+                        <FaEye size={18} />
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );

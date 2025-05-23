@@ -1,6 +1,6 @@
 import React from "react";
 
-function ShareTipsInput({ label, inputType, dValue, selectValue }) {
+function ShareTipsInput({ label, inputType, readValue, selectValue }) {
   return (
     <>
       {inputType === "select" ? (
@@ -8,9 +8,16 @@ function ShareTipsInput({ label, inputType, dValue, selectValue }) {
           <label className="label capitalize text-gray-800 text-base font-medium">
             {label}
           </label>
-          <select defaultValue={selectValue[0]} className="select  w-full">
-            {selectValue.map((value) => (
-              <option defaultValue={value}>{value}</option>
+          <select
+            name={label.split(" ").join("")}
+            defaultValue={selectValue[0]}
+            className="select  w-full"
+            required
+          >
+            {selectValue.map((value, i) => (
+              <option key={i} defaultValue={value}>
+                {value}
+              </option>
             ))}
           </select>
         </fieldset>
@@ -22,10 +29,11 @@ function ShareTipsInput({ label, inputType, dValue, selectValue }) {
           <input
             type={inputType}
             className="input w-full"
-            name={label}
-            defaultValue={dValue || ""}
+            name={label.split(" ").join("")}
+            defaultValue={readValue || ""}
             placeholder={`${label === "photo" ? "Photo URL" : label}`}
             readOnly={inputType === "email" || inputType === "name"}
+            required
           />
         </fieldset>
       )}
