@@ -1,0 +1,86 @@
+[
+  {
+    "title": "How I Grow Tomatoes Indoors",
+    "plantType": "Tomato",
+    "difficulty": "Medium",
+    "description": "Learn how to grow juicy tomatoes indoors using grow lights and containers.",
+    "image": "https://i.ibb.co/YTw5LmwG/sara-tomato.jpg",
+    "category": "Plant Care",
+    "availability": "Public",
+    "user": {
+      "email": "sara@gardenhub.com",
+      "name": "Sara Bloom"
+    },
+    "totalLike": 0
+  },
+  {
+    "title": "Beginner's Guide to Composting",
+    "plantType": "General",
+    "difficulty": "Easy",
+    "description": "Turn kitchen scraps into rich compost with these easy steps.",
+    "image": "https://i.ibb.co/DgKPW5D6/composting.jpg",
+    "category": "Composting",
+    "availability": "Public",
+    "user": {
+      "email": "john@gardenhub.com",
+      "name": "John Green"
+    },
+    "totalLike": 0
+  },
+  {
+    "title": "Maximize Your Space with Vertical Gardening",
+    "plantType": "Herbs",
+    "difficulty": "Medium",
+    "description": "A smart way to grow more plants in small urban spaces using vertical planters.",
+    "image": "https://i.ibb.co/j9fR8LYD/vertical-gardening.jpg",
+    "category": "Vertical Gardening",
+    "availability": "Public",
+    "user": {
+      "email": "maya@gardenhub.com",
+      "name": "Maya Fern"
+    },
+    "totalLike": 0
+  },
+  {
+    "title": "How to Care for Your Snake Plant",
+    "plantType": "Snake Plant",
+    "difficulty": "Easy",
+    "description": "Low maintenance and stylish, learn the basics of snake plant care.",
+    "image": "https://i.ibb.co/ym2MHBZS/snake-plant.jpg",
+    "category": "Plant Care",
+    "availability": "Public",
+    "user": {
+      "email": "alex@gardenhub.com",
+      "name": "Alex Leaf"
+    },
+    "totalLike": 0
+  },
+  {
+    "title": "Growing Strawberries in Hanging Baskets",
+    "plantType": "Strawberry",
+    "difficulty": "Medium",
+    "description": "Perfect for balconies, this guide helps you grow strawberries in baskets.",
+    "image": "https://i.ibb.co/C5MrQks0/strawberry.jpg",
+    "category": "Container Gardening",
+    "availability": "Public",
+    "user": {
+      "email": "linda@gardenhub.com",
+      "name": "Linda Berry"
+    },
+    "totalLike": 0
+  },
+  {
+    "title": "DIY Organic Fertilizer Mix at Home",
+    "plantType": "General",
+    "difficulty": "Easy",
+    "description": "Mix natural ingredients for a chemical-free, cost-effective fertilizer.",
+    "image": "https://i.ibb.co/pv79Tvq3/fertilize.jpg",
+    "category": "Composting",
+    "availability": "Public",
+    "user": {
+      "email": "kevin@gardenhub.com",
+      "name": "Kevin Sprout"
+    },
+    "totalLike": 0
+  }
+]

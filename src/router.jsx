@@ -26,7 +26,8 @@ const router = createBrowserRouter([
       },
       {
         path: "explore-gardeners",
-        loader: () => fetch("http://localhost:3000/explore-gardeners"),
+        loader: () =>
+          fetch("https://ecobari-server.vercel.app/explore-gardeners"),
         element: (
           <Suspense fallback={<Loading />}>
             <Gardeners />

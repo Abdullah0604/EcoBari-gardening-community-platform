@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import About from "../components/About/About";
 import Banner from "../components/Banner/Banner";
 import GardenersSection from "../components/GardenersSection/GardenersSection";
@@ -14,7 +15,9 @@ function Home() {
       <OurPromises />
       <About />
       <GardenersSection />
+
       <TopTrendingTips />
+
       <Success />
     </div>
   );
