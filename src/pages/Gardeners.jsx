@@ -10,7 +10,7 @@ const Gardeners = () => {
           Meet Our Gardeners
           <span className=" block mt-3 mx-auto w-20 h-1 bg-green-600"></span>
         </h2>
-        <p className="text-sm md:text-lg font-extrlight max-w-[700px] mx-auto opacity-70">
+        <p className="text-sm md:text-lg font-extrlight max-w-[700px] dark:text-red-600 mx-auto opacity-70">
           Discover passionate gardening enthusiasts from around the world.
           Connect, share, and grow together through their experiences, tips, and
           love for nature.

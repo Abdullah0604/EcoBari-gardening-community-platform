@@ -1,41 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import treeImg from "../assets/trees/tree.jpg";
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { FaEye, FaFilter } from "react-icons/fa";
+import Loading from "../components/Loading/Loading";
 function BrowseTips() {
-  const tips = [
-    {
-      img: treeImg,
-      title: "Cy Ganderton",
-      category: "Composting",
-      difficulty: "Easy",
-    },
-    {
-      img: treeImg,
-      title: "Cy Ganderton",
-      category: "Composting",
-      difficulty: "Medium",
-    },
-    {
-      img: treeImg,
-      title: "Cy Ganderton",
-      category: "Composting",
-      difficulty: "Easy",
-    },
-    {
-      img: treeImg,
-      title: "Cy Ganderton",
-      category: "Composting",
-      difficulty: "Hard",
-    },
-    {
-      img: treeImg,
-      title: "Cy Ganderton",
-      category: "Composting",
-      difficulty: "Medium",
-    },
-  ];
+  const tipsData = useLoaderData();
+  const [tips, setTips] = useState(tipsData);
+  const [difficulty, setDifficulty] = useState("all");
+  const [loading, setLoading] = useState(true);
+
+  // const tips = [
+  //   {
+  //     img: treeImg,
+  //     title: "Cy Ganderton",
+  //     category: "Composting",
+  //     difficulty: "Easy",
+  //   },
+  //   {
+  //     img: treeImg,
+  //     title: "Cy Ganderton",
+  //     category: "Composting",
+  //     difficulty: "Medium",
+  //   },
+  //   {
+  //     img: treeImg,
+  //     title: "Cy Ganderton",
+  //     category: "Composting",
+  //     difficulty: "Easy",
+  //   },
+  //   {
+  //     img: treeImg,
+  //     title: "Cy Ganderton",
+  //     category: "Composting",
+  //     difficulty: "Hard",
+  //   },
+  //   {
+  //     img: treeImg,
+  //     title: "Cy Ganderton",
+  //     category: "Composting",
+  //     difficulty: "Medium",
+  //   },
+  // ];
+  const handleDifficulty = (e) => {
+    const difValue = e.target.value.toLowerCase();
+    setDifficulty(difValue);
+    console.log(difValue);
+  };
+  useEffect(() => {
+    // setLoading(false);
+    fetch(`https://ecobari-server.vercel.app/browse-tips/${difficulty}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // setLoading(false);
+        setTips(data);
+        console.log(data);
+      });
+  }, [difficulty]);
+  // if (loading) {
+  //   return <Loading />;
+  // }
   return (
     <div className="px-2 my-34">
       {/* header */}
@@ -60,7 +83,8 @@ function BrowseTips() {
               {/* <span className="text-base">Filter</span> */}
             </label>
             <select
-              defaultValue="Pick a browser"
+              value={difficulty}
+              onChange={handleDifficulty}
               className="select max-w-[150px]"
             >
               <option value="all">All</option>
@@ -83,12 +107,12 @@ function BrowseTips() {
           </thead>
           <tbody>
             {/* row 1 */}
-            {tips.map((tip, i) => (
-              <tr key={i}>
+            {tips.map((tip) => (
+              <tr key={tip._id}>
                 <td>
                   <img
                     className="w-12 h-12 object-cover rounded-md"
-                    src={tip.img}
+                    src={tip.image}
                     alt=""
                   />
                 </td>
@@ -96,7 +120,7 @@ function BrowseTips() {
                 <td>{tip.category}</td>
                 <td>{tip.difficulty}</td>
                 <td>
-                  <Link to={`/browse-tips/${i}`}>
+                  <Link to={`/browse-tips/${tip._id}`}>
                     <button className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200">
                       <FaEye size={18} />
                     </button>

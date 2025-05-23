@@ -41,12 +41,6 @@ function TopTrendingTips() {
         {tipsDB.map((tip, i) => (
           <Tip key={i} tip={tip} />
         ))}
-        {/* <Tip />
-        <Tip />
-        <Tip />
-        <Tip />
-        <Tip />
-        <Tip /> */}
       </div>
     </div>
   );

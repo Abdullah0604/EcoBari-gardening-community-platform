@@ -26,16 +26,16 @@ const router = createBrowserRouter([
       },
       {
         path: "explore-gardeners",
+        hydrateFallbackElement: <Loading />,
         loader: () =>
           fetch("https://ecobari-server.vercel.app/explore-gardeners"),
-        element: (
-          <Suspense fallback={<Loading />}>
-            <Gardeners />
-          </Suspense>
-        ),
+        Component: Gardeners,
       },
       {
         path: "browse-tips",
+        hydrateFallbackElement: <Loading />,
+        loader: () =>
+          fetch("https://ecobari-server.vercel.app/browse-tips/all"),
         Component: BrowseTips,
       },
       {
