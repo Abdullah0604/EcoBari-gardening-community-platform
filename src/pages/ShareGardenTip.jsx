@@ -14,7 +14,7 @@ function ShareGardenTip() {
     const title = form.title.value;
     const plantType = form.plantType.value;
     const description = form.description.value;
-    const difficulty = form.difficultyLevel.value;
+    const difficulty = form.difficultyLevel.value.toLowerCase();
     const availability = form.availability.value;
     const category = form.category.value;
     const email = form.email.value;
