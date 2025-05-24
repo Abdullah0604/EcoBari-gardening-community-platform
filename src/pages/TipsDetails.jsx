@@ -1,11 +1,13 @@
-import React, { use } from "react";
-import bannerImg from "../assets/trees/tree.jpg";
-import AuthContext from "../contexts/AuthContext";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { useState } from "react";
+
 function TipsDetails() {
   // const { user } = use(AuthContext);
   const tipDetailsData = useLoaderData();
   const {
+    _id,
     title,
     plantType,
     difficulty,
@@ -14,34 +16,38 @@ function TipsDetails() {
     category,
     availability,
     user,
+    totalLike,
   } = tipDetailsData;
+  const [newTotalLike, setNewTotalLike] = useState(totalLike);
   console.log(tipDetailsData);
-  // const gardeningTip = {
-  //   title: "How I Grow Tomatoes Indoors",
-  //   plantType: "Tomato",
-  //   difficulty: "Easy", // Easy | Medium | Hard
-  //   description:
-  //     "I use small pots near the window with regular watering and banana peel compost.I use small pots near the window with regular watering and banana peel compost.I use small pots near the window with regular watering and banana peel compost.",
-  //   imageUrl: "https://example.com/tomato.jpg",
-  //   category: "Vertical Gardening", // Composting | Plant Care | Vertical Gardening | etc.
-  //   availability: "Public", // Public | Hidden
-  //   userEmail: "user@example.com",
-  //   userName: "John Doe",
-  // };
-  // const {
-  //   title,
-  //   plantType,
-  //   difficulty,
-  //   description,
-  //   imageUrl,
-  //   category,
-  //   availability,
-  //   userEmail,
-  //   userName,
-  // } = gardeningTip;
 
+  const handleLikeUser = (id) => {
+    const updatedTotalLike = newTotalLike + 1;
+    setNewTotalLike(updatedTotalLike);
+    fetch(`https://ecobari-server.vercel.app/update-like`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ id, newTotalLike: updatedTotalLike }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
   return (
     <div className="max-w-[1000px] mx-auto my-32">
+      <div>
+        <Link to="/browse-tips">
+          <button className="bg-green-600 text-slate-200 px-6 py-2 rounded-lg text-lg flex items-center">
+            <span>
+              <FaArrowLeftLong size={20} />{" "}
+            </span>
+            Browse Other Tips
+          </button>
+        </Link>
+      </div>
       {/* details about subscription */}
       <section className=" grid grid-cols-1 xl:grid-cols-5 px-2 items-center  gap-7">
         <div className="w-full xl:col-span-3">
@@ -79,6 +85,22 @@ function TipsDetails() {
             <h2 className="text-2xl font-semibold mb-1">{title}:</h2>
             {/* desc */}
             <p className="text-gray-700 text-sm mb-5">{description}</p>
+            <div className="mb-1">
+              <span className="text-gray-700 block w-full">
+                If you enjoy it, please click the love button bellow.
+              </span>
+            </div>
+            <div>
+              <button
+                onClick={() => {
+                  handleLikeUser(_id);
+                }}
+                className="hover:scale-110 transition-transform duration-200 bg-red-200 p-2 rounded-md"
+                title="Like this tip"
+              >
+                <FaHeart color="red" size={22} />
+              </button>
+            </div>
           </div>
         </div>
       </section>
