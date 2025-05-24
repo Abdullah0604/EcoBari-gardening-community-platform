@@ -12,6 +12,7 @@ function MyTips() {
   const [openModal, setOpenModal] = useState(false);
   const [currentModalData, setCurrentModalData] = useState(null);
   useEffect(() => {
+    // console.log(currentModalData?.difficulty);
     setLoading(true);
     fetch(`https://ecobari-server.vercel.app/my-tips/${user.email}`)
       .then((res) => res.json())
@@ -111,7 +112,7 @@ function MyTips() {
   const getOldTipDataForModal = (id) => {
     const oldTip = myTips.find((tip) => tip._id === id);
     setCurrentModalData(oldTip);
-    // console.log(oldTip);
+    // console.log(oldTip.difficulty);
   };
   return (
     <div className="px-2 py-34">
@@ -145,7 +146,7 @@ function MyTips() {
                 <ShareTipsInput
                   label="difficulty Level"
                   inputType="select"
-                  selectValue={["Easy", "Medium", "Hard"]}
+                  selectValue={["easy", "medium", "hard"]}
                   readValue={currentModalData?.difficulty}
                 />
                 <ShareTipsInput

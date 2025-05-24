@@ -119,7 +119,7 @@ function Navbar() {
               role="button"
             />
             {isName && (
-              <span className="absolute whitespace-nowrap bg-slate-200 rounded-md  shadow-md px-4   -left-23">
+              <span className="absolute whitespace-nowrap bg-slate-200 dark:text-gray-800 rounded-md  shadow-md px-4   -left-23">
                 {user.displayName}
               </span>
             )}
@@ -143,9 +143,10 @@ function Navbar() {
             <div className="dropdown min-[1100px]:hidden">
               <button
                 className="pt-2 mr-2"
+                // onBlur={() => setIsActive(false)}
                 onClick={() => setIsActive(!isActive)}
               >
-                {isActive ? <RxCross2 size={24} /> : <RiMenuFill size={24} />}
+                <RiMenuFill size={24} />
               </button>
 
               {isActive && (

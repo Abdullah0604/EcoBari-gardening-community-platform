@@ -1,7 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import ShareTipsInput from "../components/ShareTipsInput/ShareTipsInput";
 import AuthContext from "../contexts/AuthContext";
-import { successToast } from "../utils/toasts";
+import Swal from "sweetalert2";
 
 function ShareGardenTip() {
   const { user } = use(AuthContext);
@@ -52,7 +52,11 @@ function ShareGardenTip() {
           .then((res) => res.json())
           .then((data) => {
             if (data.insertedId) {
-              successToast("Successfully You have shared a Tip ");
+              Swal.fire({
+                title: "Shared A Tip!",
+                text: "Successfully You have shared a Tip .",
+                icon: "success",
+              });
               // console.log(data);
             }
           });

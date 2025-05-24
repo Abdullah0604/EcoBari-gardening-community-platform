@@ -13,7 +13,7 @@ function ShareTipsInput({ label, inputType, readValue, selectValue }) {
             required
           >
             {selectValue.map((value, i) => (
-              <option key={i} defaultValue={value}>
+              <option key={i} value={value}>
                 {value}
               </option>
             ))}
