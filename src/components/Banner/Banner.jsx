@@ -46,7 +46,7 @@ function Banner() {
   ];
 
   return (
-    <div className="mt-24 px-2 md:px-0">
+    <div className="pt-24 px-2 md:px-0">
       <Swiper
         pagination={{
           dynamicBullets: true,

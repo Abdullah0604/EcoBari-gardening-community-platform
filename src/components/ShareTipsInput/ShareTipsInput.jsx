@@ -3,7 +3,7 @@ function ShareTipsInput({ label, inputType, readValue, selectValue }) {
     <>
       {inputType === "select" ? (
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
-          <label className="label capitalize text-gray-800 text-base font-medium">
+          <label className="label capitalize text-gray-800 dark:text-gray-400 text-base font-medium">
             {label}
           </label>
           <select
@@ -21,7 +21,7 @@ function ShareTipsInput({ label, inputType, readValue, selectValue }) {
         </fieldset>
       ) : (
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
-          <label className="label capitalize text-gray-800 text-base font-medium">
+          <label className="label capitalize text-gray-800 dark:text-gray-400 text-base font-medium">
             {label}
           </label>
           <input

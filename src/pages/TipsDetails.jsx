@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useState } from "react";
+import NotFound from "./NotFound";
 
 function TipsDetails() {
   // const { user } = use(AuthContext);
@@ -36,9 +37,13 @@ function TipsDetails() {
         console.log(data);
       });
   };
+
+  if (tipDetailsData && !tipDetailsData._id) {
+    return <NotFound />;
+  }
   return (
-    <div className="max-w-[1000px] mx-auto my-32">
-      <div>
+    <div className="max-w-[1000px] mx-auto py-32">
+      <div className="my-8">
         <Link to="/browse-tips">
           <button className="bg-green-600 text-slate-200 px-6 py-2 rounded-lg text-lg flex items-center">
             <span>
@@ -84,9 +89,11 @@ function TipsDetails() {
             {/* category */}
             <h2 className="text-2xl font-semibold mb-1">{title}:</h2>
             {/* desc */}
-            <p className="text-gray-700 text-sm mb-5">{description}</p>
+            <p className="text-gray-700 dark:text-gray-500 text-sm mb-5">
+              {description}
+            </p>
             <div className="mb-1">
-              <span className="text-gray-700 block w-full">
+              <span className="text-gray-700 dark:text-gray-500 block w-full">
                 If you enjoy it, please click the love button bellow.
               </span>
             </div>

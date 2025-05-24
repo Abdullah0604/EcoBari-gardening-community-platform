@@ -5,14 +5,14 @@ const NotFound = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="px-4 my-10">
+    <div className="px-4 py-10">
       <div className="min-h-screen flex flex-col items-center justify-center  max-w-[500px] mx-auto rounded-xl text-gray-700 ">
         <img
           src="/assets/green-error.svg"
           alt="404 Not Found"
           className="max-w-sm w-full mb-6 "
         />
-        <p className="mb-6 text-center  ">
+        <p className="mb-6 text-center dark:text-slate-200  ">
           Sorry, the page you are looking for does not exist.
         </p>
         <button

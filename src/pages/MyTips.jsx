@@ -114,11 +114,11 @@ function MyTips() {
     console.log(oldTip);
   };
   return (
-    <div className="px-2 my-34">
+    <div className="px-2 py-34">
       {/* modal for updating tip */}
       {openModal && (
         <div className="fixed inset-0 px-2 md:px-6  bg-black/60 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-4xl shadow-lg overflow-auto max-h-[90vh]">
+          <div className="bg-white dark:bg-black/80 rounded-lg p-6 w-full max-w-4xl shadow-lg overflow-auto max-h-[90vh]">
             <div className="flex justify-end">
               <button
                 onClick={() => {
@@ -234,40 +234,41 @@ function MyTips() {
             </thead>
             <tbody>
               {/* row 1 */}
-              {myTips.map((tip, i) => (
-                <tr key={i}>
-                  <td>
-                    <img
-                      className="w-12 h-12 object-cover rounded-md"
-                      src={tip.image}
-                      alt=""
-                    />
-                  </td>
-                  <td>{tip.plantType}</td>
-                  <td>{tip.title.slice(0, 20)}...</td>
-                  <td>{tip.description.slice(0, 30)}...</td>
-                  <td>{tip.category}</td>
-                  <td>{tip.availability}</td>
-                  <td className="flex">
-                    <button
-                      onClick={() => {
-                        getOldTipDataForModal(tip._id);
-                        setOpenModal(!openModal);
-                      }}
-                      className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
-                    >
-                      <FaEdit size={18} />
-                    </button>
+              {myTips.length &&
+                myTips.map((tip, i) => (
+                  <tr key={i}>
+                    <td>
+                      <img
+                        className="w-12 h-12 object-cover rounded-md"
+                        src={tip.image}
+                        alt=""
+                      />
+                    </td>
+                    <td>{tip.plantType}</td>
+                    <td>{tip.title.slice(0, 20)}...</td>
+                    <td>{tip.description.slice(0, 30)}...</td>
+                    <td>{tip.category}</td>
+                    <td>{tip.availability}</td>
+                    <td className="flex">
+                      <button
+                        onClick={() => {
+                          getOldTipDataForModal(tip._id);
+                          setOpenModal(!openModal);
+                        }}
+                        className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
+                      >
+                        <FaEdit size={18} />
+                      </button>
 
-                    <button
-                      onClick={() => handleDeleteTip(tip._id)}
-                      className="mx-2 px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
-                    >
-                      <FaTrash size={18} />
-                    </button>
-                  </td>
-                </tr>
-              ))}
+                      <button
+                        onClick={() => handleDeleteTip(tip._id)}
+                        className="mx-2 px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
+                      >
+                        <FaTrash size={18} />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

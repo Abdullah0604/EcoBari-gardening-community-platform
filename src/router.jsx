@@ -26,9 +26,6 @@ const router = createBrowserRouter([
       },
       {
         path: "explore-gardeners",
-        hydrateFallbackElement: <Loading />,
-        loader: () =>
-          fetch("https://ecobari-server.vercel.app/explore-gardeners"),
         Component: Gardeners,
       },
       {
