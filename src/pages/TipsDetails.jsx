@@ -3,6 +3,7 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { useState } from "react";
 import NotFound from "./NotFound";
+import { successToast } from "../utils/toasts";
 
 function TipsDetails() {
   // const { user } = use(AuthContext);
@@ -31,7 +32,13 @@ function TipsDetails() {
         "content-type": "application/json",
       },
       body: JSON.stringify({ id, newTotalLike: updatedTotalLike }),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          successToast(`Thanks for the like! Total likes: ${updatedTotalLike}`);
+        }
+      });
   };
 
   if (tipDetailsData && !tipDetailsData._id) {

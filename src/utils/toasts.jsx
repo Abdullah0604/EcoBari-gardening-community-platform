@@ -19,7 +19,7 @@ function errorMessage(title, desc) {
 }
 function successToast(message) {
   toast.success(message, {
-    position: "top-center",
+    position: "top-right",
     autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: false,

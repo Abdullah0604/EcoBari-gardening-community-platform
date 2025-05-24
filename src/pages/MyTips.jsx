@@ -219,60 +219,68 @@ function MyTips() {
         </div>
       ) : (
         <div className="my-20 bg-base-100 py-10 px-2 overflow-x-auto max-w-[1080px] mx-auto rounded-box border-2 border-base-content/5 ">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th>Image</th>
-                <th>Plant Type</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Availability</th>
+          {myTips.length ? (
+            <table className="table">
+              {/* head */}
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Plant Type</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Availability</th>
 
-                <th>Tips Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* row 1 */}
-              {myTips.length
-                ? myTips.map((tip, i) => (
-                    <tr key={i}>
-                      <td>
-                        <img
-                          className="w-12 h-12 object-cover rounded-md"
-                          src={tip.image}
-                          alt=""
-                        />
-                      </td>
-                      <td>{tip.plantType}</td>
-                      <td>{tip.title.slice(0, 20)}...</td>
-                      <td>{tip.description.slice(0, 30)}...</td>
-                      <td>{tip.category}</td>
-                      <td>{tip.availability}</td>
-                      <td className="flex">
-                        <button
-                          onClick={() => {
-                            getOldTipDataForModal(tip._id);
-                            setOpenModal(!openModal);
-                          }}
-                          className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
-                        >
-                          <FaEdit size={18} />
-                        </button>
+                  <th>Tips Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* row 1 */}
+                {myTips.length
+                  ? myTips.map((tip, i) => (
+                      <tr key={i}>
+                        <td>
+                          <img
+                            className="w-12 h-12 object-cover rounded-md"
+                            src={tip.image}
+                            alt=""
+                          />
+                        </td>
+                        <td>{tip.plantType}</td>
+                        <td>{tip.title.slice(0, 20)}...</td>
+                        <td>{tip.description.slice(0, 30)}...</td>
+                        <td>{tip.category}</td>
+                        <td>{tip.availability}</td>
+                        <td className="flex">
+                          <button
+                            onClick={() => {
+                              getOldTipDataForModal(tip._id);
+                              setOpenModal(!openModal);
+                            }}
+                            className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
+                          >
+                            <FaEdit size={18} />
+                          </button>
 
-                        <button
-                          onClick={() => handleDeleteTip(tip._id)}
-                          className="mx-2 px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
-                        >
-                          <FaTrash size={18} />
-                        </button>
-                      </td>
-                    </tr>
-                  ))
-                : ""}
-            </tbody>
-          </table>
+                          <button
+                            onClick={() => handleDeleteTip(tip._id)}
+                            className="mx-2 px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
+                          >
+                            <FaTrash size={18} />
+                          </button>
+                        </td>
+                      </tr>
+                    ))
+                  : ""}
+              </tbody>
+            </table>
+          ) : (
+            <div className="w-full flex justify-center items-center min-h-[200px]">
+              <h2 className="text-2xl text-center font-medium dark:text-slate-200">
+                You have not shared any tip yet! Please share A Tip...
+              </h2>
+            </div>
+          )}
         </div>
       )}
     </div>

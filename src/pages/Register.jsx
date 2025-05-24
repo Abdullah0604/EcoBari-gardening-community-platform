@@ -65,8 +65,8 @@ function Register() {
     });
   };
   return (
-    <div>
-      <div className="card bg-base-100 mx-auto my-24 max-w-md shrink-0 shadow-2xl">
+    <div className="py-24">
+      <div className="card bg-base-100 mx-auto  max-w-md shrink-0 shadow-2xl">
         <h2 className="text-center py-2 text-3xl font-bold">
           Please Register Now
         </h2>
@@ -83,7 +83,7 @@ function Register() {
 
             {/* password */}
             <div>
-              <label className="label text-base font-semibold text-gray-800">
+              <label className="label dark:text-slate-200 text-base font-semibold text-gray-800">
                 Password
               </label>
               <div className="relative">

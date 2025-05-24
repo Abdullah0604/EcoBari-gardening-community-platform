@@ -1,7 +1,7 @@
 function Tip({ tip }) {
   const { image, title, difficulty, description, totalLike } = tip;
   return (
-    <div className="card bg-slate-100 mx-auto max-w-[300px] shadow-sm">
+    <div className="card bg-slate-100 mx-auto max-w-[320px] shadow-sm">
       <figure>
         <img
           className="w-full h-[200px] object-cover"
@@ -16,7 +16,9 @@ function Tip({ tip }) {
         <h2 className="card-title text-gray-900">{title}</h2>
         <p className="text-gray-900 ">{description}</p>
         <p>
-          <span className="font-medium">Total Like: {totalLike} </span>
+          <span className="font-medium dark:text-gray-800">
+            Total Like: {totalLike}{" "}
+          </span>
         </p>
       </div>
     </div>

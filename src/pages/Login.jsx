@@ -48,8 +48,8 @@ function Login() {
       });
   };
   return (
-    <div>
-      <div className="card bg-base-100 mx-auto my-30 bg-[url('/assets/bg.png')] bg-no-repeat bg-[right_-60px_top_-20px] bg-contain  max-w-md shrink-0 shadow-2xl">
+    <div className="py-30">
+      <div className="card bg-base-100 mx-auto  bg-[url('/assets/bg.png')] bg-no-repeat bg-[right_-60px_top_-20px] bg-contain  max-w-md shrink-0 shadow-2xl">
         <h2 className="text-center py-2 text-3xl font-bold">
           Please Login Now
         </h2>
@@ -68,7 +68,7 @@ function Login() {
             </div>
 
             <div>
-              <label className="label text-base font-semibold text-gray-800">
+              <label className="label text-base font-semibold dark:text-slate-200 text-gray-800">
                 Email
               </label>
               <input
@@ -81,7 +81,7 @@ function Login() {
               />
             </div>
             <div>
-              <label className="label text-base font-semibold text-gray-800">
+              <label className="label text-base dark:text-slate-200 font-semibold text-gray-800">
                 Password
               </label>
               <div className="relative">
