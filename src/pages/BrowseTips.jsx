@@ -44,7 +44,7 @@ function BrowseTips() {
   const handleDifficulty = (e) => {
     const difValue = e.target.value.toLowerCase();
     setDifficulty(difValue);
-    console.log(difValue);
+    // console.log(difValue);
   };
   useEffect(() => {
     setLoading(true);
@@ -53,7 +53,7 @@ function BrowseTips() {
       .then((data) => {
         setLoading(false);
         setTips(data);
-        console.log(data);
+        // console.log(data);
       });
   }, [difficulty]);
 

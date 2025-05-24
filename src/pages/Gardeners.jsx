@@ -1,4 +1,3 @@
-import { useLoaderData } from "react-router";
 import GardenerCard from "../components/GardenerCard/GardenerCard";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading/Loading";
@@ -10,7 +9,7 @@ const Gardeners = () => {
     fetch("https://ecobari-server.vercel.app/explore-gardeners")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setLoading(false);
         setGardenersDB(data);
       });

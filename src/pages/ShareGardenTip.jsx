@@ -35,8 +35,8 @@ function ShareGardenTip() {
       totalLike: 0,
     };
     setNewTip(tip);
-    console.log(tip);
-    console.log({ userEmail, userName });
+    // console.log(tip);
+    // console.log({ userEmail, userName });
   };
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function ShareGardenTip() {
           .then((data) => {
             if (data.insertedId) {
               successToast("Successfully You have shared a Tip ");
-              console.log(data);
+              // console.log(data);
             }
           });
       }

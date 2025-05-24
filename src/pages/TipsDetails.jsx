@@ -20,7 +20,7 @@ function TipsDetails() {
     totalLike,
   } = tipDetailsData;
   const [newTotalLike, setNewTotalLike] = useState(totalLike);
-  console.log(tipDetailsData);
+  // console.log(tipDetailsData);
 
   const handleLikeUser = (id) => {
     const updatedTotalLike = newTotalLike + 1;
@@ -31,11 +31,7 @@ function TipsDetails() {
         "content-type": "application/json",
       },
       body: JSON.stringify({ id, newTotalLike: updatedTotalLike }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    });
   };
 
   if (tipDetailsData && !tipDetailsData._id) {

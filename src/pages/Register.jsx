@@ -27,7 +27,7 @@ function Register() {
     // const email = e.target.email.value;
     // const password = e.target.password.value;
     // const photo = e.target.photo.value;
-    console.log(name, email, password, photo);
+    // console.log(name, email, password, photo);
     const isPassword = passwordChecker(password);
 
     if (isPassword) {

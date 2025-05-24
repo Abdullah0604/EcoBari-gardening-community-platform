@@ -18,12 +18,12 @@ function MyTips() {
       .then((data) => {
         setLoading(false);
         setMyTips(data);
-        console.log(data);
+        // console.log(data);
       });
   }, [user.email]);
 
   const handleDeleteTip = (id) => {
-    console.log(id);
+    // console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -78,7 +78,7 @@ function MyTips() {
       category,
       image,
     };
-    console.log(id, updatedTip);
+    // console.log(id, updatedTip);
 
     fetch(`https://ecobari-server.vercel.app/update-tip`, {
       method: "PUT",
@@ -100,18 +100,18 @@ function MyTips() {
             .then((data) => {
               setLoading(false);
               setMyTips(data);
-              console.log(data);
+              // console.log(data);
             });
           setOpenModal(false);
           setCurrentModalData(null);
         }
-        console.log(data);
+        // console.log(data);
       });
   };
   const getOldTipDataForModal = (id) => {
     const oldTip = myTips.find((tip) => tip._id === id);
     setCurrentModalData(oldTip);
-    console.log(oldTip);
+    // console.log(oldTip);
   };
   return (
     <div className="px-2 py-34">
