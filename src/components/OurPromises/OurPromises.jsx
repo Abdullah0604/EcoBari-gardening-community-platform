@@ -27,7 +27,13 @@ function OurPromises() {
   return (
     <div className="my-30 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 rounded-xl gap-5">
       {promisesContent.map(({ icon, title, desc }, index) => (
-        <OurPromise key={index} icon={icon} title={title} desc={desc} />
+        <OurPromise
+          i={index}
+          key={index}
+          icon={icon}
+          title={title}
+          desc={desc}
+        />
       ))}
     </div>
   );
