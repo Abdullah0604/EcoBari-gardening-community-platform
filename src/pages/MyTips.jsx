@@ -234,41 +234,42 @@ function MyTips() {
             </thead>
             <tbody>
               {/* row 1 */}
-              {myTips.length &&
-                myTips.map((tip, i) => (
-                  <tr key={i}>
-                    <td>
-                      <img
-                        className="w-12 h-12 object-cover rounded-md"
-                        src={tip.image}
-                        alt=""
-                      />
-                    </td>
-                    <td>{tip.plantType}</td>
-                    <td>{tip.title.slice(0, 20)}...</td>
-                    <td>{tip.description.slice(0, 30)}...</td>
-                    <td>{tip.category}</td>
-                    <td>{tip.availability}</td>
-                    <td className="flex">
-                      <button
-                        onClick={() => {
-                          getOldTipDataForModal(tip._id);
-                          setOpenModal(!openModal);
-                        }}
-                        className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
-                      >
-                        <FaEdit size={18} />
-                      </button>
+              {myTips.length
+                ? myTips.map((tip, i) => (
+                    <tr key={i}>
+                      <td>
+                        <img
+                          className="w-12 h-12 object-cover rounded-md"
+                          src={tip.image}
+                          alt=""
+                        />
+                      </td>
+                      <td>{tip.plantType}</td>
+                      <td>{tip.title.slice(0, 20)}...</td>
+                      <td>{tip.description.slice(0, 30)}...</td>
+                      <td>{tip.category}</td>
+                      <td>{tip.availability}</td>
+                      <td className="flex">
+                        <button
+                          onClick={() => {
+                            getOldTipDataForModal(tip._id);
+                            setOpenModal(!openModal);
+                          }}
+                          className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
+                        >
+                          <FaEdit size={18} />
+                        </button>
 
-                      <button
-                        onClick={() => handleDeleteTip(tip._id)}
-                        className="mx-2 px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
-                      >
-                        <FaTrash size={18} />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
+                        <button
+                          onClick={() => handleDeleteTip(tip._id)}
+                          className="mx-2 px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200"
+                        >
+                          <FaTrash size={18} />
+                        </button>
+                      </td>
+                    </tr>
+                  ))
+                : ""}
             </tbody>
           </table>
         </div>

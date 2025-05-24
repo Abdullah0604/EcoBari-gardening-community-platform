@@ -38,9 +38,7 @@ function TopTrendingTips() {
         <span className=" block mt-3 mx-auto w-20 h-1 bg-green-600"></span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-        {tipsDB.map((tip, i) => (
-          <Tip key={i} tip={tip} />
-        ))}
+        {tipsDB.length ? tipsDB.map((tip, i) => <Tip key={i} tip={tip} />) : ""}
       </div>
     </div>
   );

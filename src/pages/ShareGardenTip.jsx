@@ -60,7 +60,7 @@ function ShareGardenTip() {
     }
   }, [newTip]);
   return (
-    <div className="py-14 py-20 max-w-[1200px] mx-auto">
+    <div className=" py-20 max-w-[1200px] mx-auto">
       <div className="text-center py-14">
         <h2 className="text-2xl  md:text-2xl lg:text-4xl font-bold mb-6 ">
           Share Your Green Wisdom

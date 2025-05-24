@@ -111,28 +111,29 @@ function BrowseTips() {
             </thead>
 
             <tbody>
-              {tips.length &&
-                tips.map((tip) => (
-                  <tr key={tip._id}>
-                    <td>
-                      <img
-                        className="w-12 h-12 object-cover rounded-md"
-                        src={tip.image}
-                        alt=""
-                      />
-                    </td>
-                    <td>{tip.title}</td>
-                    <td>{tip.category}</td>
-                    <td>{tip.difficulty}</td>
-                    <td>
-                      <Link to={`/browse-tips/${tip._id}`}>
-                        <button className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200">
-                          <FaEye size={18} />
-                        </button>
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
+              {tips.length
+                ? tips.map((tip) => (
+                    <tr key={tip._id}>
+                      <td>
+                        <img
+                          className="w-12 h-12 object-cover rounded-md"
+                          src={tip.image}
+                          alt=""
+                        />
+                      </td>
+                      <td>{tip.title}</td>
+                      <td>{tip.category}</td>
+                      <td>{tip.difficulty}</td>
+                      <td>
+                        <Link to={`/browse-tips/${tip._id}`}>
+                          <button className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200">
+                            <FaEye size={18} />
+                          </button>
+                        </Link>
+                      </td>
+                    </tr>
+                  ))
+                : ""}
             </tbody>
           </table>
         )}

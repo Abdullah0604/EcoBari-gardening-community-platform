@@ -32,10 +32,11 @@ const Gardeners = () => {
         </p>
       </div>
       <div className="my-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10">
-        {gardenersDB.length &&
-          gardenersDB.map((gardener, i) => (
-            <GardenerCard key={i} gardener={gardener} />
-          ))}
+        {gardenersDB.length
+          ? gardenersDB.map((gardener, i) => (
+              <GardenerCard key={i} gardener={gardener} />
+            ))
+          : ""}
       </div>
     </div>
   );
