@@ -12,48 +12,51 @@ function Banner() {
   const contents = [
     {
       title: [
-        "Join: Green Thumb Meetup 2025",
-        "Learn composting techniques",
-        "Share plant care tips",
-        "Connect with garden lovers",
+        "Explore: Green Thumb Tips",
+        "Discover composting ideas",
+        "Find plant care hacks",
+        "Get inspired by garden lovers",
       ],
-      desc: "Join our weekend gardening meetup! Learn composting, share plant tips, and connect with local garden lovers.",
-      btnText: "Join Event",
+      desc: "Dive into a world of green! Explore composting tricks, plant care tips, and connect with gardening enthusiasts.",
+      btnText: "Explore Tips",
       img: banner,
+      navigate: "/browse-tips",
     },
     {
       title: [
-        "Discover: Balcony Garden Basics",
-        "Transform your small space",
-        "Free tools & expert advice",
-        "Create your own green corner",
+        "Share: Your Balcony Garden Tricks",
+        "Inspire others with your ideas",
+        "Upload photos & steps",
+        "Grow the community together",
       ],
-      desc: "Discover how to turn your small space into a green paradise. Free tools & expert tips included!",
-      btnText: "Reserve Your Spot",
+      desc: "Got a creative balcony garden setup? Share your methods, tools, and photos to help others grow green!",
+      btnText: "Share Your Tip",
       img: belconyBanner,
+      navigate: "/share-garden-tip",
     },
     {
       title: [
-        "Explore: Community Compost Drive",
-        "Recycle your kitchen waste",
-        "Learn to compost at home",
-        "Grow a greener neighborhood",
+        "Manage: Your Shared Garden Tips",
+        "Update your old tips",
+        "Delete irrelevant ideas",
+        "Keep your content fresh",
       ],
-      desc: "Bring your kitchen waste and learn to compost! Let’s build a greener neighborhood together.",
-      btnText: "Get Involved",
+      desc: "Take control of your shared gardening tips. Edit, update, or remove your content anytime from your profile.",
+      btnText: "Manage Tips",
       img: compostingBanner,
+      navigate: "/my-tips",
     },
   ];
 
   return (
-    <div className="pt-24 px-2 md:px-0">
+    <div className="pt-24 px-2 ">
       <Swiper
         pagination={{
           dynamicBullets: true,
         }}
         autoplay={false}
         modules={[Pagination]}
-        className="mySwiper w-full mx-auto  rounded-xl my-10"
+        className="mySwiper w-full mx-auto  rounded-xl "
       >
         {contents.map((content, i) => (
           <SwiperSlide key={i}>

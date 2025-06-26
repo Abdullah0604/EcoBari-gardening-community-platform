@@ -10,7 +10,7 @@ import AuthContext from "../contexts/AuthContext";
 
 function Home() {
   return (
-    <div>
+    <div className="space-y-20">
       <Banner />
       <OurPromises />
       <About />

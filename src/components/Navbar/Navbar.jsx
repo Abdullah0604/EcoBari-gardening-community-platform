@@ -4,7 +4,7 @@ import userIcon from "/assets/user-account.png";
 import logoIcon from "/assets/green-home.png";
 import AuthContext from "../../contexts/AuthContext";
 import { RiMenuFill } from "react-icons/ri";
-import { RxCross2 } from "react-icons/rx";
+// import { RxCross2 } from "react-icons/rx";
 import { IoMoon, IoSunny } from "react-icons/io5";
 function Navbar() {
   const { user, logoutUser } = use(AuthContext);
@@ -41,22 +41,20 @@ function Navbar() {
         <NavLink to="/">Home</NavLink>
       </li>
       <li className="font-medium text-lightGray">
+        <NavLink to="/about-us">About US</NavLink>
+      </li>
+      <li className="font-medium text-lightGray">
         <NavLink to="/explore-gardeners"> Explore Gardeners</NavLink>
       </li>
       <li className="font-medium text-lightGray">
         <NavLink to="/browse-tips">Browse Tips </NavLink>
       </li>
-      {user && (
-        <>
-          {" "}
-          <li className="font-medium text-lightGray">
-            <NavLink to="/share-garden-tip">Share a Garden Tip </NavLink>
-          </li>
-          <li className="font-medium text-lightGray">
-            <NavLink to="/my-tips">My Tips </NavLink>
-          </li>
-        </>
-      )}
+      <li className="font-medium text-lightGray">
+        <NavLink to="/share-garden-tip">Share a Garden Tip </NavLink>
+      </li>
+      <li className="font-medium text-lightGray">
+        <NavLink to="/my-tips">My Tips </NavLink>
+      </li>
     </>
   );
 

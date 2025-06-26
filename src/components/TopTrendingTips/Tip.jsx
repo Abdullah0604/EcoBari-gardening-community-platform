@@ -1,5 +1,8 @@
+import { Link } from "react-router";
+
 function Tip({ tip }) {
-  const { image, title, difficulty, description, totalLike } = tip;
+  const { image, title, difficulty, description, totalLike, _id } = tip;
+  console.log(tip);
   return (
     <div className="card bg-slate-100 mx-auto max-w-[320px] shadow-sm">
       <figure>
@@ -14,12 +17,19 @@ function Tip({ tip }) {
           {difficulty}
         </div>
         <h2 className="card-title text-gray-900">{title}</h2>
-        <p className="text-gray-900 ">{description}</p>
+        <p className="text-gray-500 ">
+          {description.split(" ").slice(0, 15).join(" ")}......
+        </p>
         <p>
           <span className="font-medium dark:text-gray-800">
             Total Like: {totalLike}{" "}
           </span>
         </p>
+        <Link to={`/browse-tips/${_id}`}>
+          <button className="px-2 py-1 rounded-md bg-green-500 cursor-pointer text-slate-200">
+            See Details
+          </button>
+        </Link>
       </div>
     </div>
   );

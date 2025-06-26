@@ -16,16 +16,16 @@ function OurPromises() {
     {
       icon: <GiRecycle size={50} className="text-green-600" />,
       title: "Eco-Friendly Focus",
-      desc: "We promote sustainable practices like composting and recycling in every step.",
+      desc: "We promote sustainable practices like composting and recycling.",
     },
     {
       icon: <GiTreehouse size={50} className="text-green-600" />,
       title: "Grow Together",
-      desc: "From balcony pots to backyard jungles—grow your green space with us.",
+      desc: "From balcony pots to backyard jungles—grow your green space.",
     },
   ];
   return (
-    <div className="my-30 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 rounded-xl gap-5">
+    <div className="  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 rounded-xl gap-5">
       {promisesContent.map(({ icon, title, desc }, index) => (
         <OurPromise
           i={index}

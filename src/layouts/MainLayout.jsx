@@ -12,11 +12,13 @@ function MainLayout() {
     return <Loading />;
   }
   return (
-    <div className="max-w-[1400px] mx-auto">
-      <ToastContainer />
-      <Navbar />
-      <div>
-        <Outlet />
+    <div>
+      <div className="max-w-[1400px] mx-auto">
+        <ToastContainer />
+        <Navbar />
+        <div>
+          <Outlet />
+        </div>
       </div>
       <Footer />
     </div>

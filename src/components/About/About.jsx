@@ -15,7 +15,7 @@ const AboutSection = () => {
   }
 `;
   return (
-    <section className="py-20 ">
+    <section className="">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
         {/* Left Image */}
 
@@ -32,17 +32,17 @@ const AboutSection = () => {
         {/* Right Content */}
         <div className="w-full md:w-1/2 bg-slate-100 rounded-xl px-5 py-10">
           <div className="my-5">
-            <Fade direction="down" duration={1800}>
+            <Fade direction="down" duration={1800} triggerOnce>
               <p className="text-sm font-medium text-green-600 mb-2">
                 Why choose Ecobari?
               </p>
             </Fade>
-            <Fade direction="up" duration={1800}>
+            <Fade direction="up" duration={1800} triggerOnce>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Integrate Automated <br /> Workflows
               </h2>
             </Fade>
-            <Fade direction="up" duration={1800}>
+            <Fade direction="up" duration={1800} triggerOnce>
               <p className="text-gray-600 text-sm  mb-6">
                 We help you transform everyday gardening into a smart,
                 connected, and efficient experience. Track, manage, and grow
@@ -53,7 +53,7 @@ const AboutSection = () => {
 
           <div className="mt-5">
             {/* Feature 1 */}
-            <Fade direction="up" duration={1800}>
+            <Fade direction="up" duration={1800} triggerOnce>
               <Feature
                 icon={<FaEdit size={20} />}
                 title="Custom Edit Tool"
@@ -61,7 +61,7 @@ const AboutSection = () => {
               />
             </Fade>
             {/* Feature 2 */}
-            <Fade direction="up" duration={1800}>
+            <Fade direction="up" duration={1800} triggerOnce>
               <Feature
                 icon={<FaSeedling size={20} />}
                 title={" Practical Gardening Tips"}

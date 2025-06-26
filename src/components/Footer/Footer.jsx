@@ -6,7 +6,7 @@ import logoIcon from "/assets/green-home.png";
 import { NavLink } from "react-router";
 function Footer() {
   return (
-    <footer className=" bg-gray-900 rounded-md relative  text-white py-10 px-3 mt-16 md:p-10">
+    <footer className=" bg-gray-900 rounded-md relative  text-white py-10 px-3 mt-20 md:p-10">
       <div className="footer sm:footer-horizontal max-w-[1400px] mx-auto py-10">
         <aside className="">
           <div>

@@ -1,19 +1,20 @@
 import { createBrowserRouter } from "react-router";
-import MainLayout from "./layouts/MainLayout";
-import NotFound from "./pages/NotFound";
-import Home from "./pages/Home";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import ResetPassword from "./pages/ResetPassword";
-import ShareGardenTip from "./pages/ShareGardenTip";
-import BrowseTips from "./pages/BrowseTips";
-import TipsDetails from "./pages/TipsDetails";
-import MyTips from "./pages/MyTips";
+import MainLayout from "../layouts/MainLayout";
+import NotFound from "../pages/NotFound";
+import Home from "../pages/Home";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
+import ResetPassword from "../pages/ResetPassword";
+import ShareGardenTip from "../pages/ShareGardenTip";
+import BrowseTips from "../pages/BrowseTips";
+import TipsDetails from "../pages/TipsDetails";
+import MyTips from "../pages/MyTips";
 // import GardenerCard from "./pages/Gardeners";
-import Gardeners from "./pages/Gardeners";
-import PrivateRouter from "./provider/PrivateRouter";
+import Gardeners from "../pages/Gardeners";
+import PrivateRouter from "../provider/PrivateRouter";
 
-import Loading from "./components/Loading/Loading";
+import Loading from "../components/Loading/Loading";
+import AboutUS from "../pages/AboutUS/AboutUS";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         Component: Home,
+      },
+      {
+        path: "/about-us",
+        Component: AboutUS,
       },
       {
         path: "explore-gardeners",

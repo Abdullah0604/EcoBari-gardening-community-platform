@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router";
 import { Typewriter } from "react-simple-typewriter";
 
 function Slider({ content }) {
-  const { title, desc, btnText, img } = content;
+  const { title, desc, btnText, img, navigate } = content;
   return (
     <div
-      className="hero min-h-[85vh] rounded-lg  "
+      className="hero min-h-[70vh] rounded-lg  "
       style={{
         backgroundImage: `url(${img})`,
       }}
@@ -26,9 +27,11 @@ function Slider({ content }) {
           </h1>
 
           <p className="mb-5">{desc}</p>
-          <button className="btn bg-green-600 text-slate-200 border-none shadow-none">
-            {btnText}
-          </button>
+          <Link to={navigate}>
+            <button className="btn bg-green-600 text-slate-200 border-none shadow-none">
+              {btnText}
+            </button>
+          </Link>
         </div>
       </div>
     </div>
