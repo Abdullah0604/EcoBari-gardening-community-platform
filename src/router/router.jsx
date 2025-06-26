@@ -16,6 +16,8 @@ import PrivateRouter from "../provider/PrivateRouter";
 import Loading from "../components/Loading/Loading";
 import AboutUS from "../pages/AboutUS/AboutUS";
 import InformUS from "../pages/ContactUS/InformUs";
+import DashboardLayout from "../pages/Dashboard/Dashboard";
+import DashboardOverview from "../pages/Dashboard/Overview/DashboardOverview";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
         path: "explore-gardeners",
         Component: Gardeners,
       },
+
       {
         path: "browse-tips",
         hydrateFallbackElement: <Loading />,
@@ -57,20 +60,41 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "share-garden-tip",
+        path: "dashboard",
         element: (
           <PrivateRouter>
-            <ShareGardenTip />
+            <DashboardLayout />
           </PrivateRouter>
         ),
-      },
-      {
-        path: "my-tips",
-        element: (
-          <PrivateRouter>
-            <MyTips />
-          </PrivateRouter>
-        ),
+        children: [
+          {
+            index: true,
+            path: "dashboard-overview",
+            element: (
+              <PrivateRouter>
+                <DashboardOverview />
+              </PrivateRouter>
+            ),
+          },
+
+          {
+            path: "share-garden-tip",
+            element: (
+              <PrivateRouter>
+                <ShareGardenTip />
+              </PrivateRouter>
+            ),
+          },
+
+          {
+            path: "my-tips",
+            element: (
+              <PrivateRouter>
+                <MyTips />
+              </PrivateRouter>
+            ),
+          },
+        ],
       },
 
       {

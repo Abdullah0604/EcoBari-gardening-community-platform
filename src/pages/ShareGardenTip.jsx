@@ -64,8 +64,8 @@ function ShareGardenTip() {
     }
   }, [newTip]);
   return (
-    <div className=" py-20 max-w-[1200px] mx-auto">
-      <div className="text-center py-14">
+    <div className=" py-8 xl:py-0 max-w-[1200px] mx-auto">
+      <div className="text-center pt-5 pb-14">
         <h2 className="text-2xl  md:text-2xl lg:text-4xl font-bold mb-6 ">
           Share Your Green Wisdom
           <span className=" block mt-3 mx-auto w-24 h-1 bg-green-600"></span>

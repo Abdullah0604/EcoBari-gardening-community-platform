@@ -6,6 +6,7 @@ import AuthContext from "../../contexts/AuthContext";
 import { RiMenuFill } from "react-icons/ri";
 // import { RxCross2 } from "react-icons/rx";
 import { IoMoon, IoSunny } from "react-icons/io5";
+import { FaAngleDown } from "react-icons/fa";
 function Navbar() {
   const { user, logoutUser } = use(AuthContext);
   const [isActive, setIsActive] = useState(false);
@@ -47,17 +48,16 @@ function Navbar() {
         <NavLink to="/explore-gardeners"> Explore Gardeners</NavLink>
       </li>
       <li className="font-medium text-lightGray">
-        <NavLink to="/browse-tips">Browse Tips </NavLink>
+        <NavLink to="/browse-tips">Browse All Tips </NavLink>
       </li>
       <li className="font-medium text-lightGray">
         <NavLink to="/contact-us">Contact US </NavLink>
       </li>
-      <li className="font-medium text-lightGray">
-        <NavLink to="/share-garden-tip">Share a Garden Tip </NavLink>
-      </li>
-      <li className="font-medium text-lightGray">
-        <NavLink to="/my-tips">My Tips </NavLink>
-      </li>
+      {user && (
+        <li className="font-medium text-lightGray">
+          <NavLink to="/dashboard">Dashboard </NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -110,20 +110,27 @@ function Navbar() {
         </div>
         {user ? (
           <div className="relative dropdown">
-            <img
-              src={user ? user.photoURL : userIcon}
-              className="w-10 h-10 mr-2 object-cover rounded-full"
-              alt=""
-              onMouseEnter={showName}
-              onMouseLeave={hideName}
-              tabIndex={0}
-              role="button"
-            />
-            {isName && (
-              <span className="absolute whitespace-nowrap bg-slate-200 dark:text-gray-800 rounded-md  shadow-md px-4   -left-23">
-                {user.displayName}
-              </span>
-            )}
+            <div>
+              <div
+                onMouseEnter={showName}
+                onMouseLeave={hideName}
+                tabIndex={0}
+                role="button"
+                className="flex items-center"
+              >
+                <img
+                  src={user ? user.photoURL : userIcon}
+                  className="w-10 h-10 mr-2 object-cover rounded-full"
+                  alt=""
+                />
+                <FaAngleDown className="text-green-600" />
+              </div>
+              {isName && (
+                <span className="absolute whitespace-nowrap bg-slate-200 dark:text-gray-800 rounded-md  shadow-md px-4   -left-23">
+                  {user.displayName}
+                </span>
+              )}
+            </div>
 
             <ul
               tabIndex={0}

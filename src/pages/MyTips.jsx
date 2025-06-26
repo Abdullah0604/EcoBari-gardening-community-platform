@@ -115,7 +115,7 @@ function MyTips() {
     // console.log(oldTip.difficulty);
   };
   return (
-    <div className="px-2 py-34">
+    <div className="px-2 py-10 xl:py-0">
       {/* modal for updating tip */}
       {openModal && (
         <div className="fixed inset-0 px-2 md:px-6  bg-black/60 flex items-center justify-center z-50">
@@ -202,7 +202,7 @@ function MyTips() {
       )}
 
       {/* header */}
-      <div className="text-center ">
+      <div className="text-center pt-5 ">
         <h2 className="text-2xl  md:text-2xl lg:text-4xl font-bold mb-6 ">
           Your Shared Garden Tips
           <span className=" block mt-3 mx-auto w-24 h-[2px] bg-green-600"></span>
