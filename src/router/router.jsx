@@ -18,6 +18,7 @@ import AboutUS from "../pages/AboutUS/AboutUS";
 import InformUS from "../pages/ContactUS/InformUs";
 import DashboardLayout from "../pages/Dashboard/Dashboard";
 import DashboardOverview from "../pages/Dashboard/Overview/DashboardOverview";
+import ComingSoon from "../components/ComingSoon/ComingSoon";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,13 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
+            element: (
+              <PrivateRouter>
+                <DashboardOverview />
+              </PrivateRouter>
+            ),
+          },
+          {
             path: "dashboard-overview",
             element: (
               <PrivateRouter>
@@ -91,6 +99,30 @@ const router = createBrowserRouter([
             element: (
               <PrivateRouter>
                 <MyTips />
+              </PrivateRouter>
+            ),
+          },
+          {
+            path: "manage-events",
+            element: (
+              <PrivateRouter>
+                <ComingSoon />
+              </PrivateRouter>
+            ),
+          },
+          {
+            path: "profile",
+            element: (
+              <PrivateRouter>
+                <ComingSoon />
+              </PrivateRouter>
+            ),
+          },
+          {
+            path: "setting",
+            element: (
+              <PrivateRouter>
+                <ComingSoon />
               </PrivateRouter>
             ),
           },

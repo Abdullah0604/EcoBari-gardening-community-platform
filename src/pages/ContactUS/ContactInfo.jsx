@@ -29,10 +29,10 @@ const ContactInfo = () => {
         </div>
         <div>
           <div className="flex items-center  gap-5 ">
-            <FaPhoneAlt className="text-lg " />
+            <FaEnvelope className="text-lg " />
             <h3>General Support</h3>
           </div>
-          <p className="text-gray-500 pl-8 pt-2 ">+880 1234 567 890</p>
+          <p className="text-gray-500 pl-8 pt-2 ">support@ecobari.com</p>
         </div>
       </div>
     </div>

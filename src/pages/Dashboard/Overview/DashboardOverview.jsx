@@ -42,7 +42,11 @@ const DashboardOverview = () => {
   }, [user.email]);
 
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="h-screen w-full flex justify-center items-center">
+        <h2 className="text-lg font-semibold">Loading....</h2>
+      </div>
+    );
   }
   return (
     <div className="px-2 py-6 space-y-10">
