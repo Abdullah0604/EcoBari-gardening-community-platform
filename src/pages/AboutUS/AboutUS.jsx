@@ -4,6 +4,7 @@ import React from "react";
 import AboutIntroSection from "./AboutIntroSection ";
 import WhyChooseUs from "./WhyChooseUs ";
 import Testimonial from "./Testimonial";
+import CallToAction from "./CallToAction";
 
 const AboutUS = () => {
   return (
@@ -11,6 +12,7 @@ const AboutUS = () => {
       <AboutIntroSection />
       <WhyChooseUs />
       <Testimonial />
+      <CallToAction />
     </div>
   );
 };

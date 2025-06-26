@@ -15,6 +15,7 @@ import PrivateRouter from "../provider/PrivateRouter";
 
 import Loading from "../components/Loading/Loading";
 import AboutUS from "../pages/AboutUS/AboutUS";
+import InformUS from "../pages/ContactUS/InformUs";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/about-us",
         Component: AboutUS,
+      },
+      {
+        path: "/contact-us",
+        Component: InformUS,
       },
       {
         path: "explore-gardeners",

@@ -50,6 +50,9 @@ function Navbar() {
         <NavLink to="/browse-tips">Browse Tips </NavLink>
       </li>
       <li className="font-medium text-lightGray">
+        <NavLink to="/contact-us">Contact US </NavLink>
+      </li>
+      <li className="font-medium text-lightGray">
         <NavLink to="/share-garden-tip">Share a Garden Tip </NavLink>
       </li>
       <li className="font-medium text-lightGray">
