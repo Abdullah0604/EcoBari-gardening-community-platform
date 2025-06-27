@@ -32,7 +32,7 @@ function TopTrendingTips() {
     return <Loading />;
   }
   return (
-    <div className="">
+    <div id="trendTips">
       <h2 className="text-2xl text-center md:text-2xl lg:text-4xl font-bold mb-16 ">
         Most Popular Tips
         <span className=" block mt-3 mx-auto w-20 h-1 bg-green-600"></span>

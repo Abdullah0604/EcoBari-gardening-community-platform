@@ -15,7 +15,7 @@ const AboutSection = () => {
   }
 `;
   return (
-    <section className="">
+    <section id="about">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
         {/* Left Image */}
 

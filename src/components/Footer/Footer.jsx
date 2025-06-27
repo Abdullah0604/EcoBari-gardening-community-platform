@@ -3,7 +3,7 @@ import facebook from "../../assets/social/facebook.svg";
 import twitter from "../../assets/social/twitter.svg";
 import instagram from "../../assets/social/instagram.svg";
 import logoIcon from "/assets/green-home.png";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 function Footer() {
   return (
     <footer className=" bg-gray-900 rounded-md relative  text-white py-10 px-3 mt-20 md:p-10">
@@ -51,22 +51,43 @@ function Footer() {
         </aside>
         <nav>
           <h6 className="footer-title">Features</h6>
-          <a className="link link-hover">Join Events </a>
-          <a className="link link-hover">Share Tips</a>
-          <a className="link link-hover">Explore Other Tips</a>
+          <a href="#promises" className="link link-hover">
+            Our Promises{" "}
+          </a>
+          <a href="#about" className="link link-hover">
+            Why Choose Us
+          </a>
+          <a href="#gardeners" className="link link-hover">
+            Gardeners
+          </a>
+          <a href="#trendTips" className="link link-hover">
+            Popular Tips
+          </a>
           <a className="link link-hover">And More</a>
         </nav>
         <nav>
           <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">Home</a>
-          <a className="link link-hover">Explore Gardeners</a>
-          <a className="link link-hover">Explore Tips</a>
+          <Link to="/" className="link link-hover">
+            Home
+          </Link>
+          <Link to="/explore-gardeners" className="link link-hover">
+            Explore Gardeners
+          </Link>
+          <Link to="/browse-tips" className="link link-hover">
+            Explore Tips
+          </Link>
+          <Link to="/dashboard" className="link link-hover">
+            Dashboard
+          </Link>
         </nav>
         <nav>
           <h6 className="footer-title">Legal</h6>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <Link to="/about-us" className="link link-hover">
+            About US
+          </Link>
+          <Link to="/contact-us" className="link link-hover">
+            Contact US
+          </Link>
         </nav>
       </div>
       <aside className="max-w-[1400px] mx-auto mt-10">

@@ -13,18 +13,7 @@ function Navbar() {
   const [isName, setName] = useState(false);
 
   // theme control start
-  const [theme, setTheme] = useState("light");
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const systemPreferDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (systemPreferDark) {
-      setTheme("dark");
-    }
-  }, []);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
     const html = document.documentElement;
